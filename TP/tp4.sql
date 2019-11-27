@@ -36,14 +36,26 @@ SELECT BLOCKS FROM USER_SEGMENTS WHERE SEGMENT_NAME = 'ETUDIANT';--=56
 
 
 --Question 6
-CREATE TABLE ETUDIANT_PCT AS SELECT * FROM ETUDIANT.
+CREATE TABLE ETUDIANT_PCT AS SELECT * FROM ETUDIANT;
+CREATE TABLE ETUDIANT_PCT(
+noEtu NUMBER(6,0) CONSTRAINt pk_EPCT PRIMARY KEY,
+nomEtu VARCHAR2(50) NOT NULL,
+villeEtu VARCHAR2(50) NOT NULL,
+genre CHAR(1),
+statutM CHAR(1),
+description VARCHAR(1)
+);
 
 SELECT pct_free FROM user_tables WHERE table_name = 'ETUDIANT_PCT'; --10
 
-UPDATE ETUDIANT_PCT set description = 'aaaaaaaaaaaaaaaa';
+--UPDATE ETUDIANT_PCT set description = 'aaaaaaaaaaaaaaaa';
+--ALTER TABLE ETUDIANT_PCT MODIFY description VARCHAR (20);
+--l'un ou l'autre je sais pas lequel est le mieux mais aucun marche
 
 SELECT pct_free FROM user_tables WHERE table_name = 'ETUDIANT_PCT'; --10
 
-UPDATE ETUDIANT_PCT set description ='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+--UPDATE ETUDIANT_PCT set description ='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+--ALTER TABLE ETUDIANT_PCT MODIFY description VARCHAR (2000);
+--même remarque
 
 SELECT pct_free FROM user_tables WHERE table_name = 'ETUDIANT_PCT'; --10 mais censé faire quelque chose sauf qu'on peut pas rajouter plus de a
