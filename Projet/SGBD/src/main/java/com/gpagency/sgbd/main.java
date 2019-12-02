@@ -13,11 +13,17 @@ public class main {
     public static void main(String args[]){
         System.out.println("C'est parti");
         Table test_table = new Table();
+        Segment test_seg = new Segment(test_table);
+        Index test_ind = new Index(test_table);
         
-        int i=0;
-        for(i=0; i<100;i++){
-            String test=test_table.getListe().get(i).toString();
-        }
+        //Tests
+        int i=1;
+        String test=test_seg.getBloc(i).getEnr(0).toString();
+        test=test_seg.getBloc(i).getEnr(9).toString();
+        System.out.println("_____________________");
+        test=test_table.getEnr(i*10+0).toString();
+        test=test_table.getEnr(i*10+9).toString();
+        
         
     }
     

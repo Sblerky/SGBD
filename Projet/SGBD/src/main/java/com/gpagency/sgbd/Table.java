@@ -21,6 +21,10 @@ public class Table {
     public List<Enregistrement> getListe() {
         return liste;
     }
+    
+    public Enregistrement getEnr(int i){
+        return this.liste.get(i);
+    }
 
     public Table(){
         int i=0;
