@@ -15,15 +15,23 @@ public class main {
         Table test_table = new Table();
         Segment test_seg = new Segment(test_table);
         Index test_ind = new Index(test_table);
+        Segment test_segind = new Segment(test_ind);
         
         //Tests
+        /*
         int i=1;
         String test=test_seg.getBloc(i).getEnr(0).toString();
         test=test_seg.getBloc(i).getEnr(9).toString();
         System.out.println("_____________________");
         test=test_table.getEnr(i*10+0).toString();
         test=test_table.getEnr(i*10+9).toString();
-        
+        */
+        int i=1;
+        String test=test_segind.getBloc(i).getEnr(0).toString();
+        test=test_segind.getBloc(i).getEnr(9).toString();
+        System.out.println("_____________________");
+        System.out.println(test_ind.getEnr(i*10+0));
+        System.out.println(test_ind.getEnr(i*10+9));
         
     }
     

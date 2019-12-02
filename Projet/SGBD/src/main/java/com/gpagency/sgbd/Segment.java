@@ -37,19 +37,19 @@ public class Segment {
             this.liste.add(b);
         }
     }
-    /*
-    public Segment(Index i){
-        int count = i.getListe().size();
+    
+    public Segment(Index in){
+        int count = in.getListe().size();
         int i=0;
         int j=0;
         for (i=0; i<count; i=i+10){
             
             List <Enregistrement> li_enr = new ArrayList<Enregistrement>();
             for(j=0; j<10; j++){
-                li_enr.add(t.getListe().get(i+j));
+                li_enr.add(new Enregistrement(i+j, in.getListe().get(i+j)));
             }
             Bloc b = new Bloc(li_enr);
             this.liste.add(b);
         }
-    }*/
+    }
 }

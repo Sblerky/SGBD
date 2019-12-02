@@ -5,10 +5,22 @@
  */
 package com.gpagency.sgbd;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Jules
  */
 public class Buffer {
+    private List <Bloc> liste = new ArrayList<Bloc>();
+    
+    public List<Bloc> getListe() {
+        return liste;
+    }
+    
+    public Bloc getBloc(int i){
+        return this.liste.get(i);
+    }
     
 }

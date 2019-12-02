@@ -41,6 +41,13 @@ public class Enregistrement {
         this.desc = new String(array, Charset.forName("UTF-8"));
     }
     
+    public Enregistrement(int p_id, int p_valeur){
+        this.id=p_id;
+        
+        this.valeur = p_valeur;
+
+    }
+    
     @Override
     public String toString(){
         String res = ""+this.id+"\nValeur : "+this.valeur+"\nDescription : "+this.desc;
