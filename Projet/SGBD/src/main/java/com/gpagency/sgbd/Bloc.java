@@ -22,9 +22,9 @@ public class Bloc {
     public Enregistrement getEnr(int i){
         return this.liste.get(i);
     }
-    
+
     public Bloc(List <Enregistrement> p_liste){
         this.liste=p_liste;
     }
-    
+
 }

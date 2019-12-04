@@ -30,29 +30,27 @@ public class Enregistrement {
         return id;
     }
 
-    
+
     public Enregistrement(int p_id){
         this.id=p_id;
-        
+
         this.valeur = 1 + (int)(Math.random() * 9999);
-        
+
         byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
         this.desc = new String(array, Charset.forName("UTF-8"));
     }
-    
+
     public Enregistrement(int p_id, int p_valeur){
         this.id=p_id;
-        
         this.valeur = p_valeur;
-
     }
-    
+
     @Override
     public String toString(){
         String res = ""+this.id+"\nValeur : "+this.valeur+"\nDescription : "+this.desc;
         System.out.println(res);
         return res;
     }
-    
+
 }
