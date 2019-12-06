@@ -20,12 +20,15 @@ public class main {
         Buffer test_b = new Buffer();
         ArrayList<Resultat> res = new ArrayList<Resultat>();
         
+        Collections.sort(test_table.getListe());
+        Collections.sort(test_table2.getListe());
+        
         Segment test_seg = new Segment(test_table);
-        Index test_ind = new Index(test_table);
-        Segment test_segind = new Segment(test_ind);
+        Segment test_seg2 = new Segment(test_table2);
+        
         
         //Tests
-        Jointures.sortMerge(test_table, test_table2, test_b, res);
+        Jointures.sortMerge(test_seg, test_seg2, test_b, res);
         
         int i=0;
         
@@ -34,6 +37,8 @@ public class main {
             res.get(i).getE2().toString();
             System.out.println("\n\n");
         }
+        
+        System.out.println(test_b.getListe().size());
     }
     
 }
