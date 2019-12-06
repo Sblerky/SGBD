@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author Jules
  */
-public class Enregistrement {
+public class Enregistrement implements Comparable<Enregistrement>{
     private int id;
     private String desc;
     private int valeur;
@@ -34,7 +34,7 @@ public class Enregistrement {
     public Enregistrement(int p_id){
         this.id=p_id;
 
-        this.valeur = 1 + (int)(Math.random() * 9999);
+        this.valeur = 1 + (int)(Math.random() * 99);
 
         byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
@@ -52,5 +52,10 @@ public class Enregistrement {
         System.out.println(res);
         return res;
     }
+    
+    @Override
+    public int compareTo(Enregistrement e) {
+		return this.valeur - e.getValeur();
+	}
 
 }
