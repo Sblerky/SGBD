@@ -19,9 +19,6 @@ public class Jointures {
         List <Bloc> lb1 = s1.getListe();
         List <Bloc> lb2 = s2.getListe();
         
-        int indice_bloc1 = 0;
-        int indice_bloc2 = 0;
-        
         int pos1=0;
         int pos2=0;
         
@@ -42,21 +39,21 @@ public class Jointures {
                 liste.add(r);
                 int stock = pos2/10;
                 pos2++;
-                if(pos2/10>stock/10){
+                if(pos2/10>stock){
                     b.getListe().add(s2.getBloc(stock));
                 }
             }
             else if(val1 > val2){
                 int stock = pos2/10;
                 pos2++;
-                if(pos2/10>stock/10){
+                if(pos2/10>stock){
                     b.getListe().add(s2.getBloc(stock));
                 };
             }
             else{
                 int stock = pos1/10;
                 pos1++;
-                if(pos1/10>stock/10){
+                if(pos1/10>stock){
                     b.getListe().add(s1.getBloc(stock));
                 }
             }
