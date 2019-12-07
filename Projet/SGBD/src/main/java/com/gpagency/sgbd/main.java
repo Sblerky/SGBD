@@ -26,9 +26,14 @@ public class main {
         Segment test_seg = new Segment(test_table);
         Segment test_seg2 = new Segment(test_table2);
         
+        Index i_test = new Index(test_table2);
+        Segment test_iseg = new Segment(i_test);
+        
         
         //Tests
-        Jointures.sortMerge(test_seg, test_seg2, test_b, res);
+        //Jointures.sortMerge(test_seg, test_seg2, test_b, res);
+        //Jointures.keyLookup(test_seg, test_iseg, test_b, res);
+        Jointures.cartesian(test_seg, test_seg2, test_b, res);
         
         int i=0;
         
