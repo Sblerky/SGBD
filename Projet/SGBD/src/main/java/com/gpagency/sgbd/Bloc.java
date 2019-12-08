@@ -26,5 +26,12 @@ public class Bloc {
     public Bloc(List <Enregistrement> p_liste){
         this.liste=p_liste;
     }
-
+    
+    public Bloc(Enregistrement e){
+        this.liste.add(e);
+    }
+    
+    public Bloc(){
+        
+    }
 }
