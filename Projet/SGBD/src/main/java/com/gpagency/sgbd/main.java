@@ -13,6 +13,7 @@ import java.util.Collections;
  * @author Jules
  */
 public class main {
+    
     public static void main(String args[]){
         System.out.println("C'est parti");
         Table test_table = new Table();

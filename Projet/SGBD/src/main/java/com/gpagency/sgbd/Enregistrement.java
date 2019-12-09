@@ -49,7 +49,6 @@ public class Enregistrement implements Comparable<Enregistrement>{
     @Override
     public String toString(){
         String res = ""+this.id+"\nValeur : "+this.valeur+"\nDescription : "+this.desc;
-        System.out.println(res);
         return res;
     }
     
