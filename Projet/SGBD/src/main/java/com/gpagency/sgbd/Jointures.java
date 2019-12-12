@@ -75,6 +75,7 @@ public class Jointures {
         int i=0;
         int j=0;
         int stock=0;
+        int cpt=0;
         
         int stockj = 0;
         
@@ -87,7 +88,7 @@ public class Jointures {
                 }
             
             for(j=0; j<s2.getListe().size()*s2.getBloc(0).getListe().size(); j++){
-                
+                cpt++;
                 if(j/10>stockj){
                     b.getListe().add(s2.getBloc(stockj));
                 }
@@ -99,17 +100,14 @@ public class Jointures {
                     liste.add(r);
                 }
                 stockj=j/10;
+                
             }
+            b.getListe().add(s2.getBloc((j-1)/10));
+            stockj=0;
+            stock=i/10;
             
-            stock = i/10;
         }
-        
-        if(i/10>stock){
-                    b.getListe().add(s1.getBloc((i-1)/10));
-        }
-        if(j/10>stockj){
-                    b.getListe().add(s2.getBloc((j-1)/10));
-        }
+        b.getListe().add(s1.getBloc((i-1)/10));
     }
     
     public static void cartesian(Segment s1, Segment s2, Buffer b, ArrayList<Resultat> liste){
@@ -131,6 +129,7 @@ public class Jointures {
             lb1.clear();
             for(j=0; j<capa; j++){
                 lb1.add(s1.getBloc(i*5+j));
+                b.getListe().add(s1.getBloc(i*5+j));
             }
             
             //on parcours tous les blocs de r2 pour les comparer avec les 5 blocs
@@ -144,9 +143,10 @@ public class Jointures {
                 int val2=s2.getBloc(k/10).getEnr(k%10).getValeur();
                 
                 for(l=0; l<lb1.size()*lb1.get(0).getListe().size(); l++){
+                    /*
                     if(l/10>stock_l){
                         b.getListe().add(lb1.get(stock_l));
-                    }
+                    }*/
                     
                     //c'est des L et des un, attention de pas confondre 
                     Enregistrement enr1 = lb1.get(l/10).getEnr(l%10);
@@ -157,7 +157,7 @@ public class Jointures {
                         liste.add(r);
                     }
                     
-                    stock_l=l/10;
+                    //stock_l=l/10;
                 }
                 
                 stock_k=k/10;
@@ -165,12 +165,12 @@ public class Jointures {
             
         }
         
-        if(k/10>stock_k){
-                    b.getListe().add(s1.getBloc((k-1)/10));
-        }
-        if(l/10>stock_l){
-                    b.getListe().add(lb1.get((l-1)/10));
-        }
+        
+        b.getListe().add(s1.getBloc((k-1)/10));
+        
+        
+        b.getListe().add(lb1.get((l-1)/10));
+
     }
     
     public static void omiecinski(Segment s1, Segment s2, Buffer b, ArrayList<Resultat> liste){
@@ -210,8 +210,11 @@ public class Jointures {
             if(cpt1/10>stock1){
                     b.getListe().add(s1.getBloc(stock1));
             }
-            cpt2=0;
+            //cpt2=0;
         }
+        b.getListe().add(s1.getBloc((cpt1-1)/10));
+        b.getListe().add(s2.getBloc((cpt2-1)/10));
+
         
     }
     
